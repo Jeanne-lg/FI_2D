@@ -54,7 +54,7 @@ public class DialogManager : MonoBehaviour
             else
             {
 
-                
+
                 //currentLine=0;
                 //OnHideDialog?.Invoke();
                 //OnEnd?.Invoke();
@@ -62,20 +62,25 @@ public class DialogManager : MonoBehaviour
                 //shopUI.SetActive(true);
                 //OnHideDialog?.Invoke(); // Dialog Ende
                 //OnEndDialog?.Invoke();
-                
+
 
                 if (isShopDialog)
                 {
-                    Debug.Log("Im DialogManager - Shop sollte geöffnet werden");
                     GameController.Instance.OpenShop();
-                }else
-                {
-                    dialogBox.SetActive(false);
-                    OnHideDialog?.Invoke();
-                    Healthbar.SetActive(true);
                 }
-            }       
+                else
+                {
+                    closeDialog();
+                }
+            }
         }
+    }
+    
+    public void closeDialog()
+    {
+        dialogBox.SetActive(false);
+        OnHideDialog?.Invoke();
+        Healthbar.SetActive(true);
     }
 
     public IEnumerator TypeDialog(string line)

@@ -7671,28 +7671,23 @@ MonoBehaviour:
   - {fileID: 611906945}
   - {fileID: 471496793}
   items:
-  - itemName: 01
-    price: 0
+  - itemName: 
+    price: 20
     atkBonus: 0
     defBonus: 0
     isPurchased: 0
   - itemName: 
-    price: 0
+    price: 50
     atkBonus: 0
     defBonus: 0
     isPurchased: 0
   - itemName: 
-    price: 0
+    price: 15
     atkBonus: 0
     defBonus: 0
     isPurchased: 0
   - itemName: 
-    price: 0
-    atkBonus: 0
-    defBonus: 0
-    isPurchased: 0
-  - itemName: 
-    price: 0
+    price: 30
     atkBonus: 0
     defBonus: 0
     isPurchased: 0
@@ -9255,9 +9250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7ee62f65171444f81f156d4290a242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  money: 0
+  money: 70
   maxHealth: 100
-  curHealth: 50
+  curHealth: 100
   atk: 10
   def: 5
   moneyText: {fileID: 1826350738}
