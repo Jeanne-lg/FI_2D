@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour
 
     public void CloseShop()
     {
-        shopManager.CloseShop();
         state = GameState.FreeRoam;
+        dialogManager.closeDialog();
     }
 }

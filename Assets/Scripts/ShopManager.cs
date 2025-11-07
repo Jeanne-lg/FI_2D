@@ -17,12 +17,12 @@ public class ShopManager : MonoBehaviour
 
     private int selectedIndex = 0;
 
+
     public static ShopManager Instance { get; private set; }
 
     private void Start()
     {
-        shopUI.SetActive(false);
-        HideAllInfoCards();
+        // shopUI.SetActive(false);
     }
 
     public void OpenShop()
@@ -37,7 +37,6 @@ public class ShopManager : MonoBehaviour
     {
         isActive = false;
         shopUI.SetActive(false);
-        HideAllInfoCards();
         gameController.CloseShop();
     }
 
@@ -56,25 +55,32 @@ public class ShopManager : MonoBehaviour
 
     private void ChangeSelection(int direction)
     {
-        currentIndex = Mathf.Clamp(currentIndex + direction, 0, items.Count - 1);
-        Debug.Log(currentIndex);
+        //currentIndex = Mathf.Clamp(currentIndex + direction, 0, items.Count - 1);
+        currentIndex = currentIndex + direction;
+        if (currentIndex == 5) { currentIndex = 0; }
+        if (currentIndex == -1) { currentIndex = 4; }
         UpdateUI();
     }
 
     private void UpdateUI()
     {
+        if (currentIndex != 4)
+        {
+            // Pfeil für aktuellen Index aktivieren
+            // Alle Karten ausschalten
+            foreach (GameObject card in infoCards)
+                card.SetActive(false);
+
+            // Karten nur anzeigen, wenn der Index < infoCards.Length
+            infoCards[currentIndex].SetActive(true);
+
+        }
+        else { HideAllInfoCards(); }
+
         foreach (GameObject arrow in selectionArrows)
             arrow.SetActive(false);
 
-        // Pfeil für aktuellen Index aktivieren
-        // Alle Karten ausschalten
-        foreach (GameObject card in infoCards)
-            card.SetActive(false);
-
-        // Karten nur anzeigen, wenn der Index < infoCards.Length
-        infoCards[currentIndex].SetActive(true);
         selectionArrows[currentIndex].SetActive(true);
-
     }
 
     private void HideAllInfoCards()
@@ -85,7 +91,7 @@ public class ShopManager : MonoBehaviour
 
     private void AttemptPurchase()
     {
-        if (currentIndex == items.Count - 1)
+        if (currentIndex == 4)
         {
             CloseShop();
             return;
@@ -103,13 +109,14 @@ public class ShopManager : MonoBehaviour
         var playerStats = PlayerStats.Instance;
         if (playerStats.money >= item.price)
         {
-            playerStats.money -= item.price;
+            PlayerStats player = FindObjectOfType<PlayerStats>();
+            player.AddMoney(item.price * -1);
             playerStats.atk += item.atkBonus;
             playerStats.def += item.defBonus;
             item.isPurchased = true;
 
             DialogManager.Instance.StartCoroutine(
-                DialogManager.Instance.ShowDialog(new Dialog(new List<string> { $"{item.itemName} gekauft!" }))
+                DialogManager.Instance.ShowDialog(new Dialog(new List<string> { $"Gekauft!" }))
             );
         }
         else
