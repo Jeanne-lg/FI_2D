@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
 {
     public int money = 0;
     public float maxHealth = 100f;
-    public float curHealth = 30f;
+    public float curHealth = 10f;
     public Rigidbody2D rb;
     public int atk = 10;
     public int def = 5;

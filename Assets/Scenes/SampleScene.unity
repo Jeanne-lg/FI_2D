@@ -4297,7 +4297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3863211594587874890, guid: 5a0d8895ada169d45b430ec162b0acad, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3863211594587874890, guid: 5a0d8895ada169d45b430ec162b0acad, type: 3}
       propertyPath: obstacleCheckPoint
@@ -4305,7 +4305,7 @@ PrefabInstance:
       objectReference: {fileID: 2008192020}
     - target: {fileID: 3863211594587874890, guid: 5a0d8895ada169d45b430ec162b0acad, type: 3}
       propertyPath: playerLayer.m_Bits
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 3863211594587874890, guid: 5a0d8895ada169d45b430ec162b0acad, type: 3}
       propertyPath: obstacleLayer.m_Bits
@@ -4425,7 +4425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8965779147592911065, guid: 5a0d8895ada169d45b430ec162b0acad, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8965779147592911065, guid: 5a0d8895ada169d45b430ec162b0acad, type: 3}
       propertyPath: attackRange
@@ -6470,7 +6470,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479999673}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b42e55ede2d5da644994acc21a421f1d, type: 3}
   m_Name: 
@@ -6489,7 +6489,7 @@ MonoBehaviour:
   detectionPoint: {fileID: 0}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!212 &1479999681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9744,7 +9744,7 @@ Transform:
   m_GameObject: {fileID: 2076256851}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.63, y: 15.04, z: 0}
+  m_LocalPosition: {x: 40.9, y: 20, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10569,7 +10569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3863211594587874890, guid: 5a0d8895ada169d45b430ec162b0acad, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3863211594587874890, guid: 5a0d8895ada169d45b430ec162b0acad, type: 3}
       propertyPath: attackRange
@@ -10653,7 +10653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8965779147592911065, guid: 5a0d8895ada169d45b430ec162b0acad, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8965779147592911065, guid: 5a0d8895ada169d45b430ec162b0acad, type: 3}
       propertyPath: attackRange
